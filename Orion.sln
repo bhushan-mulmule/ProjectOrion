@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3C5DFD5-6C5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.API", "src\Web\Orion.API\Orion.API.csproj", "{38F2CCD3-AD5F-4341-A104-21ABFAA2C5DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.API", "src\Web\Orion.API\Orion.API.csproj", "{38F2CCD3-AD5F-4341-A104-21ABFAA2C5DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.Domain", "src\Domain\Orion.Domain\Orion.Domain.csproj", "{4718B942-2202-4F3D-A357-9E6199BF3EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.Domain", "src\Domain\Orion.Domain\Orion.Domain.csproj", "{4718B942-2202-4F3D-A357-9E6199BF3EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.Application", "src\Application\Orion.Application\Orion.Application.csproj", "{57BFB6C5-2DBB-45B1-8A03-25C7DE9A8B76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.Application", "src\Application\Orion.Application\Orion.Application.csproj", "{57BFB6C5-2DBB-45B1-8A03-25C7DE9A8B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.Repository", "src\Infrastructure\Orion.Repository\Orion.Repository.csproj", "{96ECF7E9-7E32-4A2D-9F17-A7DCAAF50DBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.Repository", "src\Infrastructure\Orion.Repository\Orion.Repository.csproj", "{96ECF7E9-7E32-4A2D-9F17-A7DCAAF50DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{AA25EEC9-79EF-4E90-A021-377E8BBDD0CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntergrationTest", "IntergrationTest", "{D317798B-6EF2-4CB0-9634-B9ED5F83C99F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +98,8 @@ Global
 		{4718B942-2202-4F3D-A357-9E6199BF3EC3} = {0A6B13A1-AF2B-4CB0-B8F5-AA86E09A1A7D}
 		{57BFB6C5-2DBB-45B1-8A03-25C7DE9A8B76} = {C57AB1CD-388E-4F5B-AFA0-C9853140BA31}
 		{96ECF7E9-7E32-4A2D-9F17-A7DCAAF50DBD} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
+		{AA25EEC9-79EF-4E90-A021-377E8BBDD0CE} = {4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}
+		{D317798B-6EF2-4CB0-9634-B9ED5F83C99F} = {4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9CBED8A-C287-4614-8364-48A1AE121ACE}
