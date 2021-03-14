@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Orion.API.Controllers.SeedWork;
-using Orion.Application.GetUserById;
+using Orion.Application.AccountAppLayer.UseCases.UserUseCases.GetUserById;
 using System.Threading.Tasks;
 
 namespace Orion.API.Controllers

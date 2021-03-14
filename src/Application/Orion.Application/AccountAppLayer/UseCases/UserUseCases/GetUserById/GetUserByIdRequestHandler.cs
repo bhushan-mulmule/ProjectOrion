@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Orion.Application.GetUserById
+namespace Orion.Application.AccountAppLayer.UseCases.UserUseCases.GetUserById
 {
     public class GetUserByIdRequestHandler : IRequestHandler<GetUserByIdRequest, GetUserByIdResponse>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Orion.Application.GetUserById
+namespace Orion.Application.AccountAppLayer.UseCases.UserUseCases.GetUserById
 {
     public class GetUserByIdResponse
     {
