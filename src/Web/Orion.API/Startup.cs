@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Orion.Application;
+using Orion.SQLRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace Orion.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
+            services.AddRepository();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
