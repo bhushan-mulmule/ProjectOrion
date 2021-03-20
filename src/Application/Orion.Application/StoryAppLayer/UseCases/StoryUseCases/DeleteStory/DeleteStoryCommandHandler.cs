@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
+using Orion.Application.StoryAppLayer.Gateway;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,20 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.DeleteStory
 {
     public class DeleteStoryCommandHandler : IRequestHandler<DeleteStoryCommand, StoryDto>
     {
-        public Task<StoryDto> Handle(DeleteStoryCommand request, CancellationToken cancellationToken)
+        private readonly IStoryRepository _storyRepository;
+
+        public DeleteStoryCommandHandler(IStoryRepository storyRepository)
         {
-            throw new NotImplementedException();
+            _storyRepository = storyRepository;
+        }
+
+        public async Task<StoryDto> Handle(DeleteStoryCommand request, CancellationToken cancellationToken)
+        {
+            var deletedStory = await _storyRepository.RemoveAsync(request.Id);
+
+            var storyDto = new StoryDto { Id = deletedStory.Id, Text = deletedStory.Text };
+
+            return storyDto;
         }
     }
 }
