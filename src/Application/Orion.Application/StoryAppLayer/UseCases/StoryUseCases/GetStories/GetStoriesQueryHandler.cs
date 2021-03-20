@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
+using Orion.Application.StoryAppLayer.Gateway;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,20 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.GetStories
 {
     public class GetStoriesQueryHandler : IRequestHandler<GetStoriesQuery, IEnumerable<StoryDto>>
     {
-        public Task<IEnumerable<StoryDto>> Handle(GetStoriesQuery request, CancellationToken cancellationToken)
+        private readonly IStoryRepository _storyRepository;
+
+        public GetStoriesQueryHandler(IStoryRepository storyRepository)
         {
-            throw new NotImplementedException();
+            _storyRepository = storyRepository;
+        }
+
+        public async Task<IEnumerable<StoryDto>> Handle(GetStoriesQuery request, CancellationToken cancellationToken)
+        {
+            var stories = await _storyRepository.GetAsync();
+
+            var storiesDto = stories.Select(x => new StoryDto { Id = x.Id, Text = x.Text });
+
+            return storiesDto;
         }
     }
 }

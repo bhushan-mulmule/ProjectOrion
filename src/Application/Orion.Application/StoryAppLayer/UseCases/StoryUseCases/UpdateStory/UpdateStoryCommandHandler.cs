@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
+using Orion.Application.StoryAppLayer.Gateway;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,22 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.UpdateStory
 {
     public class UpdateStoryCommandHandler : IRequestHandler<UpdateStoryCommand, StoryDto>
     {
-        public Task<StoryDto> Handle(UpdateStoryCommand request, CancellationToken cancellationToken)
+        private readonly IStoryRepository _storyRepository;
+
+        public UpdateStoryCommandHandler(IStoryRepository storyRepository)
         {
-            throw new NotImplementedException();
+            _storyRepository = storyRepository;
+        }
+
+        public async Task<StoryDto> Handle(UpdateStoryCommand request, CancellationToken cancellationToken)
+        {
+            var story = await _storyRepository.GetByIdAsync(request.Id);
+
+            story.Text = request.Text;
+
+            var updatedStory = await _storyRepository.UpdateAsync(story);
+
+            return new StoryDto { Id = updatedStory.Id, Text = updatedStory.Text };
         }
     }
 }
