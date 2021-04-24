@@ -25,7 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{AA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntergrationTest", "IntergrationTest", "{D317798B-6EF2-4CB0-9634-B9ED5F83C99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.SQLRepository", "src\Infrastructure\Orion.SQLRepository\Orion.SQLRepository.csproj", "{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.SQLRepository", "src\Infrastructure\Orion.SQLRepository\Orion.SQLRepository.csproj", "{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.CosmosRepository", "src\Infrastructure\Orion.CosmosRepository\Orion.CosmosRepository.csproj", "{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,18 @@ Global
 		{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}.Release|x64.Build.0 = Release|Any CPU
 		{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}.Release|x86.ActiveCfg = Release|Any CPU
 		{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}.Release|x86.Build.0 = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x64.Build.0 = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +114,7 @@ Global
 		{AA25EEC9-79EF-4E90-A021-377E8BBDD0CE} = {4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}
 		{D317798B-6EF2-4CB0-9634-B9ED5F83C99F} = {4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}
 		{2447C4D8-000A-4FD0-827A-3D9849C9DC5E} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
+		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9CBED8A-C287-4614-8364-48A1AE121ACE}

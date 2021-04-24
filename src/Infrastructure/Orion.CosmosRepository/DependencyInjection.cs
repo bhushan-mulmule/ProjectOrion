@@ -1,20 +1,22 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Orion.Application.StoryAppLayer.Gateway;
-using Orion.SQLRepository.StoryRepositories;
+using Orion.CosmosRepository.StoryRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Orion.SQLRepository
+namespace Orion.CosmosRepository
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddSQLRepository(this IServiceCollection services)
+        public static IServiceCollection AddCosmosRepository(this IServiceCollection services)
         {
-            services.AddScoped<StoryDbContext>();
+            services.AddSingleton<IStoryCosmosContext, StoryCosmosContext>();
+
             services.AddScoped<IStoryRepository, StoryRepository>();
+
             return services;
         }
     }
