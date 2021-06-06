@@ -22,6 +22,10 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.DeleteStory
         public async Task<StoryDto> Handle(DeleteStoryCommand request, CancellationToken cancellationToken)
         {
             var deletedStory = await _storyRepository.RemoveAsync(request.Id);
+            if (deletedStory == null)
+            {
+                return null;
+            }
 
             var storyDto = new StoryDto { Id = deletedStory.Id, Text = deletedStory.Text };
 
