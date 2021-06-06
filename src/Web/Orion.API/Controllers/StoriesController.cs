@@ -22,9 +22,14 @@ namespace Orion.API.Controllers
         }
 
         [HttpGet("{id}")] //sotries/id
-        public async Task<IActionResult> Get([FromRoute] Guid id)
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var story = await Mediator.Send(new GetStoryByIdQuery { Id = id });
+            if (story == null)
+            {
+                return APIErrors.RecordNotFound;
+            }
+
             return Ok(story);
         }
 
@@ -50,6 +55,12 @@ namespace Orion.API.Controllers
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var story = await Mediator.Send(new DeleteStoryCommand { Id = id });
+
+            if (story == null)
+            {
+                return APIErrors.RecordNotFound;
+            }
+
             return Ok(story);
         }
     }

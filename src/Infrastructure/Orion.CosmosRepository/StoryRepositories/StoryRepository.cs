@@ -4,7 +4,7 @@ using Orion.Domain.StoryDomain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Orion.CosmosRepository.StoryRepositories
@@ -43,16 +43,27 @@ namespace Orion.CosmosRepository.StoryRepositories
 
         public async Task<Story> GetByIdAsync(Guid id)
         {
-            var partitionKey = new PartitionKey(id.ToString());
-
-            var result = await _cosmosContext.StoryContainer.ReadItemAsync<Story>(id.ToString(), partitionKey);
-
-            return result.Resource;
+            try
+            {
+                var partitionKey = new PartitionKey(id.ToString());
+                var result = await _cosmosContext.StoryContainer.ReadItemAsync<Story>(id.ToString(), partitionKey);
+                return result.Resource;
+            }
+            catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
         }
 
         public async Task<Story> RemoveAsync(Guid id)
         {
             var recordToDelete = await GetByIdAsync(id);  //This is not requred if you dont want to return recod from Remove method
+
+            if (recordToDelete == null)
+            {
+                return null;
+            }
+
             var partitionKey = new PartitionKey(id.ToString());
             var result = await _cosmosContext.StoryContainer.DeleteItemAsync<Story>(id.ToString(), partitionKey);
             return recordToDelete;
