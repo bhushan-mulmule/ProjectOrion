@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -26,6 +26,15 @@ namespace Orion.API.CustomMiddlewares
             try
             {
                 await _next(context);
+            }
+            catch (ValidationException ex)
+            {
+                var problemDetails = GetBadRequestValidationProblemDetails(ex);
+
+                var response = context.Response;
+                response.ContentType = "application/json";
+                response.StatusCode = (int)HttpStatusCode.BadRequest;
+                await response.WriteAsync(JsonSerializer.Serialize(problemDetails));
             }
             catch (Exception ex)
             {
@@ -65,5 +74,27 @@ namespace Orion.API.CustomMiddlewares
                 };
             }
         }
+
+        private ValidationProblemDetails GetBadRequestValidationProblemDetails(ValidationException ex)
+        {
+            string traceId = Guid.NewGuid().ToString();
+
+            var errors = new Dictionary<string, string[]>();
+            foreach (var error in ex.Errors)
+            {
+                errors.Add(error.PropertyName, new string[] { error.ErrorMessage });
+            }
+
+            var validationProblemDetails = new ValidationProblemDetails(errors);
+
+            validationProblemDetails.Status = (int)HttpStatusCode.BadRequest;
+            validationProblemDetails.Type = "https://httpstatuses.com/400";
+            validationProblemDetails.Title = "Validation failed";
+            validationProblemDetails.Detail = "One or more inputs need to be corrected. Check errors for details";
+            validationProblemDetails.Instance = traceId;
+
+            return validationProblemDetails;
+        }
+
     }
 }
