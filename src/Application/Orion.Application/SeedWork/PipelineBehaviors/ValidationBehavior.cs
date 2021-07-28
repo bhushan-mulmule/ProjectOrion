@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using Orion.Application.SeedWork.CustomExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,12 +26,13 @@ namespace Orion.Application.SeedWork.PipelineBehaviors
             var failures = _validators
                 .Select(v => v.Validate(context))
                 .SelectMany(result => result.Errors)
+                .Select(v => v.ErrorMessage)
                 .Where(f => f != null)
                 .ToList();
 
             if (failures.Any())
             {
-                throw new ValidationException(failures);
+                throw new InvalidRequestException(failures);
             }
 
             return next();
