@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.UpdateStory
 
             var updatedStory = await _storyRepository.UpdateAsync(story);
 
-            return new StoryDto { Id = updatedStory.Id, Text = updatedStory.Text };
+            return new StoryDto { Id = updatedStory.Id, Text = updatedStory.Text, Images = updatedStory.Images };
         }
     }
 }

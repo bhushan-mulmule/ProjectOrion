@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.DeleteStory
                 return null;
             }
 
-            var storyDto = new StoryDto { Id = deletedStory.Id, Text = deletedStory.Text };
+            var storyDto = new StoryDto { Id = deletedStory.Id, Text = deletedStory.Text, Images = deletedStory.Images };
 
             return storyDto;
         }

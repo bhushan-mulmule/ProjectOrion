@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using Orion.Domain.StoryDomain.Entities;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,8 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.CreateStory
             var story = new Story
             {
                 Id = Guid.NewGuid(),
-                Text = request.Text
+                Text = request.Text,
+                Images = request.Images
             };
 
             var newStory = await _storyRepository.AddAsync(story);
@@ -33,7 +34,8 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.CreateStory
             var storyDto = new StoryDto
             {
                 Id = newStory.Id,
-                Text = newStory.Text
+                Text = newStory.Text,
+                Images = newStory.Images
             };
 
             return storyDto;

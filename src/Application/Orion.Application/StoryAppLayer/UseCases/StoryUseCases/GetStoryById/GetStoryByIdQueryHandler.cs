@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.GetStoryById
                 return null;
             }
 
-            var storyDto = new StoryDto { Id = story.Id, Text = story.Text };
+            var storyDto = new StoryDto { Id = story.Id, Text = story.Text, Images = story.Images };
 
             return storyDto;
         }
