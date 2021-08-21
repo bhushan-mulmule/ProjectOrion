@@ -13,5 +13,6 @@ namespace Orion.Domain.StoryDomain.Entities
     {
         public Guid Id { get; set; }   //either you can use [JsonProperty("id")] attribute just on Id property.. this will not change case of other properties.
         public string Text { get; set; }
+        public string[] Images { get; set; }
     }
 }

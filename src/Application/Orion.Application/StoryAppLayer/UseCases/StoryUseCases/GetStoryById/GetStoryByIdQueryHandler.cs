@@ -27,7 +27,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.GetStoryById
                 return null;
             }
 
-            var storyDto = new StoryDto { Id = story.Id, Text = story.Text };
+            var storyDto = new StoryDto { Id = story.Id, Text = story.Text, Images = story.Images };
 
             return storyDto;
         }

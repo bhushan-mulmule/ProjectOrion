@@ -18,6 +18,7 @@
     <ProjectReference Include="..\..\Application\Orion.Application\Orion.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Orion.CosmosRepository\Orion.CosmosRepository.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Orion.SQLRepository\Orion.SQLRepository.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Orion.ThirdPartyServices\Orion.ThirdPartyServices.csproj" />
   </ItemGroup>
 
 </Project>

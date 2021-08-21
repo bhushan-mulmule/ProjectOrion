@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0A6B13A1-AF2B-4CB0-B8F5-AA86E09A1A7D}"
 EndProject
@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntergrationTest", "Intergr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.SQLRepository", "src\Infrastructure\Orion.SQLRepository\Orion.SQLRepository.csproj", "{2447C4D8-000A-4FD0-827A-3D9849C9DC5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.CosmosRepository", "src\Infrastructure\Orion.CosmosRepository\Orion.CosmosRepository.csproj", "{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.CosmosRepository", "src\Infrastructure\Orion.CosmosRepository\Orion.CosmosRepository.csproj", "{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.ThirdPartyServices", "src\Infrastructure\Orion.ThirdPartyServices\Orion.ThirdPartyServices.csproj", "{CC580173-C6D6-439A-A33A-E46190A6F35E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,18 @@ Global
 		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x64.Build.0 = Release|Any CPU
 		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}.Release|x86.Build.0 = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|x64.Build.0 = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Debug|x86.Build.0 = Debug|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|x64.ActiveCfg = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|x64.Build.0 = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|x86.ActiveCfg = Release|Any CPU
+		{CC580173-C6D6-439A-A33A-E46190A6F35E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +129,7 @@ Global
 		{D317798B-6EF2-4CB0-9634-B9ED5F83C99F} = {4EBF7603-798C-4FAE-8CBD-F6C5096CEF92}
 		{2447C4D8-000A-4FD0-827A-3D9849C9DC5E} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
 		{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
+		{CC580173-C6D6-439A-A33A-E46190A6F35E} = {7FDCC461-80D9-4511-BBC0-1546D2345865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9CBED8A-C287-4614-8364-48A1AE121ACE}
