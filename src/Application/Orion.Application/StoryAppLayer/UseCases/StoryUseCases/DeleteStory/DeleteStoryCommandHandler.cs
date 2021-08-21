@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Orion.Application.StoryAppLayer.Gateway
+namespace Orion.Application.StoryAppLayer.Interfaces
 {
     public interface IStoryRepository
     {

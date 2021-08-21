@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using Orion.Domain.StoryDomain.Entities;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Orion.Application.StoryAppLayer.Gateway;
+using Orion.Application.StoryAppLayer.Interfaces;
 using Orion.SQLRepository.StoryRepositories;
 using System;
 using System.Collections.Generic;
